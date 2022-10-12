@@ -1,0 +1,145 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans&display=swap");
+
+:root {
+  --black: #00035f;
+  --red: #f25b43;
+  --light-yellow: #f7db72;
+  --yellow: #faa528;
+  --cerise: #c13291;
+  --purple: #793dc3;
+  --blue: #67a1ce;
+  font-size: 18px;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+h1,
+h2,
+h3 {
+  margin: 0;
+  padding: 1em 1rem;
+}
+
+p {
+  margin: 0;
+  padding: 1.5rem 1rem;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  line-height: 1.5;
+  color: var(--black);
+}
+
+.container > * {
+  padding: 1em 2em;
+}
+
+.container {
+  /* Define CSS Grid template here */
+  background-color: #67a1ce;
+  border: 2px solid black;
+  display: grid;
+  grid-template-columns: 1fr repeat(6, minmax(auto, 10rem)) 1fr;
+  grid-template-rows: fit-content 1fr fit-content fit-content;
+}
+
+.header {
+  background-color: var(--purple);
+  grid-column-start: 1;
+  grid-column-end: 9;
+}
+
+.main-content {
+  background-color: #faa528;
+  grid-column-start: 2;
+  grid-column-end: 6;
+}
+
+.sidebar {
+  background-color: #f25b43;
+  grid-column-start: 6;
+  grid-column-end: 8;
+}
+
+.adspace-1 {
+  background-color: #f7db72;
+  grid-column-start: 2;
+  grid-column-end: 5;
+}
+
+.adspace-2 {
+  background-color: #c13291;
+  grid-column-start: 5;
+  grid-column-end: 8;
+}
+
+.footer {
+  background-color: #67a1ce;
+  grid-column-start: 1;
+  grid-column-end: 9;
+}
+
+/* -------------------------------------------------------------------- */
+
+/* Samtidigt som ni skapar ert (första) grid. Diskutera:
+
+Hur gör man en grid container?
+Svar: Man skriver display:grid i det elementet som är containern.
+och där kodar man också hur många kolumner, rader, 
+layout för grid-template-areas.
+
+Vad är en column, row och gap?
+Svar: Column: är kolumnerna/cellerna i grid.
+Row: är raderna i grid.
+gap: är mellanrummen mellan kolumnerna.
+
+Vad är en grid-track, grid-cell och grid-line?
+Svar: Grid-cell: Är kolumnen eller kolumnens "padding".
+Grid-track: Är rader horisontelt eller columner vertikalt i en grid.
+Grid-line är själva linjerna som definierar en grid och kan vara
+horisontella eller vertikala och de är numrerade och startar vid 1.
+
+
+Vad gör grid-template-columns, resp grid-template-rows?
+Svar: columns: här talar man om hur många kolumner och hur deras bredd är.
+rows: här talar vi om hur måna rader det är och deras height.
+
+Vad är skillnaden mellan ett implicit grid och ett explicit grid?
+Explicit grid: Är när vi använder oss utav grid-template-columns och rows.
+Implicit grid: Webbläsaren skapar automatiskt en 
+"implicit grid" om vi lägger grid items
+som kommer "utanför" vår orginala grid (Som inte har kodats i vår explicit-grid) som då kommer hamna på en ny rad som inte finns med i vår kod.  
+
+
+Vad är fr-enheten?
+Svar: Fraction och om det står 1fraction så tar den upp den plats den kan
+i utrymmet.
+
+Vad gör funktionen repeat()?
+Svar: Istället för att repetera kod och 
+skriva:   minmax(auto, 10rem)  minmax(auto, 10rem)  minmax(auto, 10rem)
+Så kan vi istället skriva:
+repeat(3, minmax(auto, 10rem))
+
+Vad gör funktionen minmax()?
+Svar: Man talar om The range/"mellanskillnaden" minumum och max storleken. 
+
+Vad finns det för enheter, funktioner för att anpassa höjd/bredd efter innehållet?
+Svar: auto, fr, %, px, ch?
+
+Hur kan man placera ett specifikt element över vissa rader och kolumner m.h.a gridlinjer?
+Svar: Man kan placera elementen med deras grid-column linjer
+och på så sätt bestämma var de ska placeras i grid.
+
+Vad gör span? 
+Svar: Talar om hur bred en kolumn ska vara, hur många kolumner 
+den ska ta upp.
+t.ex. man sätter en starting linje och sen hur många kolumner 
+att expandera från startpunkten.
+Man gör så att det går att "span" ett element över flera kolumner.
+
+*/
